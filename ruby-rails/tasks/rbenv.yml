@@ -17,8 +17,14 @@
       eval "$(rbenv init -)"
       export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
 
+- name: detect if Ruby 2.4.0 is already installed
+  stat:
+    path: ~vagrant/.rbenv/versions/2.4.0
+  register: ruby_installed
+
 - name: install Ruby 2.4.0
   shell: bash -lci 'rbenv install 2.4.0'
+  when: ruby_installed.stat.isdir is not defined
 
 - name: use Ruby 2.4.0
   shell: bash -lci 'rbenv global 2.4.0'
