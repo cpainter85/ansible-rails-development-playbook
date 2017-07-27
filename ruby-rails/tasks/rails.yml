@@ -1,0 +1,8 @@
+---
+- name: install bundler
+  command: bash -lci 'gem install bundler'
+  notify: rehash rbenv
+
+- name: install rails 5.1.1
+  command: bash -lci 'gem install rails -v 5.1.1'
+  notify: rehash rbenv
