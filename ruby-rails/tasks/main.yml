@@ -1,4 +1,7 @@
 ---
 - include: ruby_dependencies.yml
+  tags: ruby
 - include: rbenv.yml
+  tags: ruby
 - include: rails.yml
+  tags: rails

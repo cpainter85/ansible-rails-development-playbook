@@ -2,4 +2,4 @@
 - hosts: default
   roles:
     - ruby-rails
-    - postgresql
+    - { role: postgresql, tags: postgresql }
