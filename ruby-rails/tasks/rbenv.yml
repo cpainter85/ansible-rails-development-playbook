@@ -16,3 +16,9 @@
       export PATH="$HOME/.rbenv/bin:$PATH"
       eval "$(rbenv init -)"
       export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"
+
+- name: install Ruby 2.4.0
+  shell: bash -lci 'rbenv install 2.4.0'
+
+- name: use Ruby 2.4.0
+  shell: bash -lci 'rbenv global 2.4.0'
