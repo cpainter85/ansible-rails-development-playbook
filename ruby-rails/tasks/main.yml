@@ -1,2 +1,3 @@
 ---
 - include: ruby_dependencies.yml
+- include: rbenv.yml
