@@ -26,5 +26,11 @@
   shell: bash -lci 'rbenv install 2.4.0'
   when: ruby_installed.stat.isdir is not defined
 
+- name: check current version of Ruby
+  shell: bash -lci 'ruby -v'
+  changed_when: false
+  register: ruby_version
+
 - name: use Ruby 2.4.0
   shell: bash -lci 'rbenv global 2.4.0'
+  when: ruby_version.stdout.find('2.4.0') == -1
